@@ -1,2 +1,6 @@
 ---
 # tasks file for anis.mysql
+- name: update the cache
+  apt: update_cache=yes
+- name: instalation des packages
+  package: name={{mysql_packages}} state=installed
