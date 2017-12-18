@@ -4,6 +4,11 @@
   apt: update_cache=yes
 - name: instalation des packages
   package: name={{mysql_packages}} state=installed
+- name: Ensure MySQL is started and enabled on boot.
+  service:
+    name=mysql
+    state=started
+    enabled=yes
 - name: update mysql root password
   mysql_user: name=root host={{ item }} password={{ mysql_root_password }}
   with_items:
