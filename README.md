@@ -2,11 +2,11 @@
 
 + Installs MySQL server on Debian/Ubuntu servers.
 
-+ Requirements
+## Requirements
 
 None.
 
-+ Role Variables
+## Role Variables
 
 + Available variables are listed below, along with default values (see vars/main.yml):
 
