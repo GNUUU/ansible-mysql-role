@@ -4,3 +4,17 @@
   apt: update_cache=yes
 - name: instalation des packages
   package: name={{mysql_packages}} state=installed
+
+- name: update mysql root password
+  mysql_user: name=root host={{ item }} password={{ mysql_root_password }}
+  with_items:
+      - 127.0.0.1
+      - ::1
+      - localhost
+- name: Copy .my.cnf
+  template:
+    src=my.cnf
+    dest=/root/.my.cnf
+    owner=root
+    group=root
+    mode=0600  

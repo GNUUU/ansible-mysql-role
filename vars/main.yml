@@ -2,3 +2,5 @@
 # vars file for anis.mysql
 mysql_packages:
   - mysql-server
+  - python-mysqldb
+mysql_root_password: salut
