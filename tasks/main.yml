@@ -4,7 +4,6 @@
   apt: update_cache=yes
 - name: instalation des packages
   package: name={{mysql_packages}} state=installed
-
 - name: update mysql root password
   mysql_user: name=root host={{ item }} password={{ mysql_root_password }}
   with_items:
@@ -17,4 +16,8 @@
     dest=/root/.my.cnf
     owner=root
     group=root
-    mode=0600  
+    mode=0600
+- name: delete MYQL anonymous user
+  mysql_user: name="" state="absent"
+- name: Remove mysql test database
+  mysql_db: name="test" state="absent"
