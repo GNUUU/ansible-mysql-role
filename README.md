@@ -1,4 +1,4 @@
-#Ansible Role: MySQL
+# Ansible Role: MySQL
 
 + Installs MySQL server on Debian/Ubuntu servers.
 
